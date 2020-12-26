@@ -18,13 +18,12 @@
 
 ## prototypes テーブル
 
-| Column      | Type       | Options     |
-| ----------- | ---------- | ----------- |
-| title       | string     | null: false |
-| catch_copy  | text       | null: false |
-| concept     | text       | null: false |
-| image       |            |             |
-| user        | references |             |
+| Column      | Type       | Options           |
+| ----------- | ---------- | ----------------- |
+| title       | string     | null: false       |
+| catch_copy  | text       | null: false       |
+| concept     | text       | null: false       |
+| user        | references | foreign_key: true |
 
 ### Association
 
@@ -33,13 +32,13 @@
 
 ## comments テーブル
 
-| Column    | Type       | Options     |
-| --------- | ---------- | ----------- |
-| text      | text       | null: false |
-| user      | references |             |
-| prototype | references |             |
+| Column      | Type       | Options           |
+|-------------|------------|-------------------|
+| text        | text       | null: false       |
+| prototype   | references | foreign_key: true |
+| user        | references | foreign_key: true |
 
 ### Association
 
-- belongs_to :user
 - belongs_to :prototype
+- belongs_to :user
